@@ -1,0 +1,2 @@
+BAD : b sees a's ticket -> ['T1'] | same object: True
+GOOD: d is untouched    -> [] | same object: False

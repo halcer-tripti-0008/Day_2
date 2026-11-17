@@ -1,0 +1,12 @@
+ticket_id,customer,subject,category,priority,status,created_at,resolved_at
+T001,Asha Rao,Cannot log in,account,High,Resolved,2025-01-05 09:00,2025-01-05 20:00
+T002,  Ben Cole ,Invoice wrong,billing,MEDIUM,closed,2025-01-06 10:00,2025-01-08 10:00
+T003,Chen Li,App crashes,technical,urgent,Resolved,2025-01-06 11:00,2025-01-06 17:30
+T004,Dina Park,Feature request,general,low,open,2025-01-07 08:30,
+T005,Eli Stone,Slow dashboard,technical,high,in progress,2025-01-07 09:15,
+T006,Fay Wong,Refund,BILLING,medium,resolved,2025-01-08 12:00,2025-01-12 12:00
+T007,,Missing customer,billing,low,open,2025-01-08 13:00,
+T008,Gus Hill,Bad priority,technical,critical,open,2025-01-09 09:00,
+T009,Hana Ito,Bad date,account,low,open,09/01/2025,
+T010,Ivan Roy,Time travel,account,low,resolved,2025-01-10 10:00,2025-01-09 10:00
+T011,Jo Kim,Resolved w/o date,billing,high,resolved,2025-01-10 11:00,

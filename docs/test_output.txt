@@ -1,0 +1,30 @@
+============================= test session starts ==============================
+platform linux -- Python 3.13.18, pytest-9.1.1, pluggy-1.6.0 -- /usr/local/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/claude/ticket_processor
+plugins: platformdirs-4.13.5, anyio-4.15.1
+collecting ... collected 21 items
+
+tests/test_tickets.py::test_valid_open_ticket PASSED                     [  4%]
+tests/test_tickets.py::test_resolution_hours PASSED                      [  9%]
+tests/test_tickets.py::test_invalid_ticket_is_rejected[overrides0-ticket_id] PASSED [ 14%]
+tests/test_tickets.py::test_invalid_ticket_is_rejected[overrides1-priority must be a Priority] PASSED [ 19%]
+tests/test_tickets.py::test_invalid_ticket_is_rejected[overrides2-requires resolved_at] PASSED [ 23%]
+tests/test_tickets.py::test_invalid_ticket_is_rejected[overrides3-must not have resolved_at] PASSED [ 28%]
+tests/test_tickets.py::test_invalid_ticket_is_rejected[overrides4-before created_at] PASSED [ 33%]
+tests/test_tickets.py::test_ticket_is_immutable PASSED                   [ 38%]
+tests/test_tickets.py::test_cleaner_normalises_text PASSED               [ 42%]
+tests/test_tickets.py::test_cleaner_does_not_mutate_input PASSED         [ 47%]
+tests/test_tickets.py::test_validator_builds_ticket PASSED               [ 52%]
+tests/test_tickets.py::test_validator_reports_all_errors_at_once PASSED  [ 57%]
+tests/test_tickets.py::test_loader_reads_rows PASSED                     [ 61%]
+tests/test_tickets.py::test_loader_missing_file_raises PASSED            [ 66%]
+tests/test_tickets.py::test_pipeline_separates_valid_and_rejected PASSED [ 71%]
+tests/test_tickets.py::test_pipeline_results_do_not_share_state PASSED   [ 76%]
+tests/test_tickets.py::test_existing_metrics_unchanged PASSED            [ 80%]
+tests/test_tickets.py::test_new_metric_sla_breach_rate PASSED            [ 85%]
+tests/test_tickets.py::test_sla_custom_config_and_isolation PASSED       [ 90%]
+tests/test_tickets.py::test_metrics_handle_no_data PASSED                [ 95%]
+tests/test_tickets.py::test_report_composes_metrics PASSED               [100%]
+
+============================== 21 passed in 0.04s ==============================

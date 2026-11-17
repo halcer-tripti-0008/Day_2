@@ -1,0 +1,22 @@
+Loaded 6 valid tickets, rejected 5
+  line 8: missing customer
+  line 9: invalid priority 'critical' (allowed: low, medium, high, urgent)
+  line 10: invalid created_at '09/01/2025'
+  line 11: resolved_at cannot be before created_at
+  line 12: status 'resolved' requires resolved_at
+{
+  "count_by_status": {
+    "resolved": 3,
+    "closed": 1,
+    "open": 1,
+    "in_progress": 1
+  },
+  "count_by_priority": {
+    "high": 2,
+    "medium": 2,
+    "urgent": 1,
+    "low": 1
+  },
+  "avg_resolution_hours": 40.38,
+  "sla_breach_rate": 0.5
+}
