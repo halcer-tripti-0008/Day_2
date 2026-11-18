@@ -1,0 +1,16 @@
+--- b2
+Schema: day02
+Loaded 0 valid tickets, rejected 1
+  line 2: malformed record: expected 8 fields, found 9
+{
+  "count_by_status": {},
+  "count_by_priority": {},
+  "avg_resolution_hours": null,
+  "avg_resolution_hours_by_category": {},
+  "avg_customer_rating": null,
+  "unresolved_count": 0,
+  "sla_breach_rate": null
+}
+exit=0
+--- b3
+exit=1

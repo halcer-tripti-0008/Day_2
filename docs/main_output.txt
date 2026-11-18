@@ -1,9 +1,10 @@
+Schema: day02
 Loaded 6 valid tickets, rejected 5
   line 8: missing customer
   line 9: invalid priority 'critical' (allowed: low, medium, high, urgent)
   line 10: invalid created_at '09/01/2025'
   line 11: resolved_at cannot be before created_at
-  line 12: status 'resolved' requires resolved_at
+  line 12: status 'resolved' requires resolved_at or resolution_time_hours
 {
   "count_by_status": {
     "resolved": 3,
@@ -18,5 +19,12 @@ Loaded 6 valid tickets, rejected 5
     "low": 1
   },
   "avg_resolution_hours": 40.38,
+  "avg_resolution_hours_by_category": {
+    "Account": 11.0,
+    "Billing": 72.0,
+    "Technical": 6.5
+  },
+  "avg_customer_rating": null,
+  "unresolved_count": 2,
   "sla_breach_rate": 0.5
 }

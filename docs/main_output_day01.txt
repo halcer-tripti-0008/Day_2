@@ -1,0 +1,27 @@
+Schema: day01
+Loaded 6 valid tickets, rejected 3
+  line 8: malformed record: expected 7 fields, found 9
+  line 9: invalid priority 'critical' (allowed: low, medium, high, urgent)
+  line 10: customer_rating must be an integer 1-5 or None
+{
+  "count_by_status": {
+    "resolved": 3,
+    "closed": 1,
+    "open": 2
+  },
+  "count_by_priority": {
+    "high": 1,
+    "medium": 2,
+    "low": 2,
+    "urgent": 1
+  },
+  "avg_resolution_hours": 12.38,
+  "avg_resolution_hours_by_category": {
+    "Account": 2.0,
+    "Billing": 17.75,
+    "Technical": 12.0
+  },
+  "avg_customer_rating": 4.0,
+  "unresolved_count": 2,
+  "sla_breach_rate": 0.0
+}

@@ -1,0 +1,10 @@
+ticket_id,category,priority,description,resolution_time_hours,customer_rating,status
+D001,Billing,High,Charged twice,5.5,4,Resolved
+D002,Technical,medium,App crash,12,3,closed
+D003,Technical,LOW,Slow page,, ,open
+D004,Account,urgent,Locked out,2,5,resolved
+D005,Billing,medium,Refund status,30,,Resolved
+D006,account,low,Change email,,,Open
+D007,Technical,high,Too,many,fields,here,open,extra
+D008,Billing,critical,Bad priority,1,2,resolved
+D009,Billing,low,Bad rating,3,9,resolved

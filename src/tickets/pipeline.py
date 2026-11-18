@@ -11,7 +11,7 @@ from .validation import TicketValidator
 
 @dataclass(frozen=True)
 class RejectedRow:
-    line_number: int   # 2 = first data row (line 1 is the header)
+    line_number: int   # physical line in the file (line 1 is the header)
     reason: str
 
 
@@ -28,9 +28,12 @@ class TicketPipeline:
 
     def run(self) -> PipelineResult:
         result = PipelineResult()
-        for line_no, raw in enumerate(self._source.rows(), start=2):
+        for row in self._source.rows():
+            if row.error is not None:            # structural problem found by the source
+                result.rejected.append(RejectedRow(row.line_number, row.error))
+                continue
             try:
-                result.tickets.append(self._validator.validate(self._cleaner.clean(raw)))
+                result.tickets.append(self._validator.validate(self._cleaner.clean(row.data)))
             except TicketValidationError as exc:
-                result.rejected.append(RejectedRow(line_no, str(exc)))
+                result.rejected.append(RejectedRow(row.line_number, str(exc)))
         return result
