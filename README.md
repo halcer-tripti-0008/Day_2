@@ -25,11 +25,11 @@ Why this is maintainable
 - **Change one thing, touch one file.** A new CSV column rule lives in validation only; a new file format means a new `RowSource`.
 - **Testable.** The pipeline takes a `RowSource`, so tests inject an in-memory fake instead of a real file.
 - **Composition over inheritance.** There is no inheritance. `TicketPipeline` and `AnalyticsReport` *hold* the parts they use. Protocols (`RowSource`, `Metric`) define the interfaces.
-- **Extending without breaking.** `SlaBreachRate` (Task C) was added as a new class; no existing class was edited and the existing metric tests are unchanged.
+- **Extending without breaking.** `SlaBreachRate` (Task C) was added as a new class; no existing metric class was edited, and the existing metric tests still pass with the same expected values.
 - **Invalid state is blocked or visible.** An invalid `SupportTicket` cannot be constructed, and bad CSV rows are returned explicitly as `RejectedRow(line_number, reason)` instead of being dropped or printed.
 
 Class vs instance state
-- Class level (shared, immutable): `SupportTicket.FINAL_STATUSES` (frozenset), `TicketValidator.REQUIRED_FIELDS` (tuple), `SlaBreachRate.DEFAULT_SLA_HOURS` (never mutated; each instance copies it).
+- Class level (shared, immutable): `SupportTicket.FINAL_STATUSES` (frozenset), `TicketValidator.DATE_FORMATS` and `TicketSchema.required_fields` (tuples), `SlaBreachRate.DEFAULT_SLA_HOURS` (read-only `MappingProxyType`; each instance copies it).
 - Instance level (per object): `CsvTicketLoader._path`, `SlaBreachRate._sla`, `PipelineResult.tickets` (`default_factory`, never a shared list).
 
 ## Data contracts and compatibility (schema note, v2)
